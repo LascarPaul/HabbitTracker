@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         db.insert(HabitContract.HabitEntry.TABLE_NAME, null, habiValues);
     }
 
-    private void displayDatabaseInfo() {
+    private Cursor readData() {
         HabitDbHelper mDbHelper = new HabitDbHelper(this);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null,
                 null);
+
+        return cursor;
         }
     }
 
